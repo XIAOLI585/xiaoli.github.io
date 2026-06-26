@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百味糕点汇 - 全国特色糕点平台</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        header {
+            background: #c83c3c;
+            color: #fff;
+            padding: 16px 5%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-wrap: wrap;
+            gap:15px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin:0;
+            gap:0;
+            flex-direction:row;
+            margin:left:1px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 16px;
+        }
+        /* 搜索框样式 */
+        .search-box{
+            width: 90%;
+            max-width: 400px;
+            margin:20px auto;
+            position: relative;
+        }
+        #search-input{
+            width:100%;
+            padding:10px 16px;
+            border-radius:30px;
+            border:none;
+            outline:none;
+            font-size:15px;
+        }
+        .banner {
+            height: 320px;
+            background: linear-gradient(rgba(200,60,60,0.7),rgba(200,60,60,0.7)),#f8e8d0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .banner h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+        .banner p {
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+        .btn {
+            padding: 12px 32px;
+            background: #fff;
+            color: #c83c3c;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+        .container {
+            width: 90%;
+            margin: 40px auto;
+        }
+        .title {
+            text-align: center;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 32px;
+            border-bottom: 3px solid #c83c3c;
+            display: inline-block;
+            left: 50%;
+            position: relative;
+            transform: translateX(-50%);
+            padding-bottom: 8px;
+        }
+        /* 地区分类 */
+        .area-wrap {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+        .area-card {
+            background: #fef6ee;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 8px #eee;
+            transition: 0.3s;
+        }
+        .area-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 6px 16px #ddd;
+        }
+        .goods-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 6px 16px #ddd;
+        }
+        .area-card h3 {
+            color: #c83c3c;
+            margin-bottom: 10px;
+        }
+        .area-card p {
+            color: #666;
+            font-size: 14px;
+        }
+        /* 糕点商品 */
+        .goods-wrap {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+            gap: 24px;
+            transition: 0.3s;
+        }
+        .goods-card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .goods-img {
+            height: 160px;
+            width: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .goods-info {
+            padding: 14px;
+        }
+        .goods-name {
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        .goods-area {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 8px;
+        }
+        .price {
+            color: #c83c3c;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        footer {
+            background: #333;
+            color: #ccc;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+        }
+        a {
+            color:black;
+            text-decoration:none;
+        }
+        a:hover{
+            color:blue;
+        }
+        .goods-logo {
+            height: 55px;
+            width: 100%;
+            margin:0;
+        }
+        .nav {
+            dispaly:flex;
+            gap:24px;
+            justify-content:flex-end;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header>
+        <div><img class="goods-logo" src="C:\Users\x3162\Desktop\新山书屋网站\0.png"></div>
+        <div class="logo">山物阅酥</div>
+        <nav>
+            <a href="#area">地区分类</a>
+            <a href="#goods">精选糕点</a>
+            <a href="#join">商家入驻</a>
+            <a href="#about">关于我们</a>
+        </nav>
+    </header>
+
+    <!-- 搜索框 -->
+    <div class="search-box">
+        <input id="search-input" placeholder="🔍 搜索全国特色糕点..." type="text">
+    </div>
+
+    <!-- 首页横幅 -->
+    <section class="banner">
+        <h1>一站式购遍全国特色糕点</h1>
+        <p>汇集南北老字号、非遗手工点心、节日礼盒</p>
+        <a href="#goods" class="btn">立即选购</a>
+    </section>
+
+    <div class="container">
+        <!-- 地区板块 -->
+        <section id="area">
+            <h2 class="title">按地区挑选糕点</h2>
+            <div class="area-wrap">
+                <div class="area-card">
+                    <h3>华北地区</h3>
+                    <p>京八件、驴打滚、太谷饼</p>
+                </div>
+                <div class="area-card">
+                    <h3>华东地区</h3>
+                    <p>苏式糕团、黄山烧饼、周村烧饼</p>
+                </div>
+                <div class="area-card">
+                    <h3>华南地区</h3>
+                    <p>广式茶点、凤梨酥、马蹄糕</p>
+                </div>
+                <div class="area-card">
+                    <h3>西南地区</h3>
+                    <p>云南鲜花饼、桃片、叶儿粑</p>
+                </div>
+                <div class="area-card">
+                    <h3>华中地区</h3>
+                    <p>黄石港饼、灯芯糕、花生糕</p>
+                </div>
+                <div class="area-card">
+                    <h3>西北地区</h3>
+                    <p>陕西水晶饼、新疆巴哈力</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 商品展示（全部替换实拍图） -->
+        <section id="goods">
+            <h2 class="title">热门特色糕点</h2>
+            <div class="goods-wrap" id="goods-list">
+                <div class="goods-card">
+                    <img class="goods-img" src="C:\Users\x3162\Desktop\新山书屋网站\1.jpg" alt="鲜花饼">
+                    <div class="goods-info">
+                        <div class="goods-name"><a href="https://m.1688.com/zhuti/-C0A5C3F7C3B5B9E5B1FD.html?qq_aio_chat_type=2"target="blank">云南玫瑰鲜花饼</a></div>
+                        <div class="goods-area">云南 · 滇式糕点</div>
+                        <div class="price">¥29.9</div>
+                    </div>
+                </div>
+                <div class="goods-card">
+                    <img class="goods-img" src="C:\Users\x3162\Desktop\新山书屋网站\2.jpg" alt="桂花条头糕">
+                    <div class="goods-info">
+                        <div class="goods-name"><a href="https://m.baidu.com/sf/vsearch?pd=goods_tab&word=%E6%A1%82%E8%8A%B1%E6%9D%A1%E5%A4%B4%E7%B3%95%E5%AE%98%E6%96%B9%E6%97%97%E8%88%B0%E5%BA%97&tn=vsearch&sa=vs_tab&lid=5481171053203798632&ms=1&from=1019311v&atn=index&from=5544&qq_aio_chat_type=2"target="blank">苏州桂花条头糕</a></div>
+                        <div class="goods-area">江苏 · 苏式糕点</div>
+                        <div class="price">¥19.9</div>
+                    </div>
+                </div>
+                <div class="goods-card">
+                    <img class="goods-img" src="C:\Users\x3162\Desktop\新山书屋网站\3.jpg" alt="京八件礼盒">
+                    <div class="goods-info">
+                        <div class="goods-name"><a href="https://so.m.jd.com/chanpin/1118953.html?qq_aio_chat_type=2"target="blank">北京京八件礼盒</a></div>
+                        <div class="goods-area">北京 · 京式糕点</div>
+                        <div class="price">¥68.0</div>
+                    </div>
+                </div>
+                <div class="goods-card">
+                    <img class="goods-img" src="C:\Users\x3162\Desktop\新山书屋网站\4.jpg" alt="黄山烧饼">
+                    <div class="goods-info">
+                        <div class="goods-name"><a href="https://m.maigoo.com/product/specs_21921.html?qq_aio_chat_type=2"target="blank">黄山烧饼</a></div>
+                        <div class="goods-area">安徽 · 徽式点心</div>
+                        <div class="price">¥16.8</div>
+                    </div>
+                </div>
+                <div class="goods-card">
+                    <img class="goods-img" src="C:\Users\x3162\Desktop\新山书屋网站\5.jpg" alt="广式老婆饼">
+                    <div class="goods-info">
+                        <div class="goods-name"><a href="https://m.baidu.com/sf/vsearch?pd=goods_tab&word=%E5%B9%BF%E5%BC%8F%E8%80%81%E5%A9%86%E9%A5%BC%E5%AE%98%E6%96%B9%E6%97%97%E8%88%B0%E5%BA%97&tn=vsearch&sa=vs_tab&lid=5088558179714561752&ms=1&from=1019311v&atn=index&from=5544&qq_aio_chat_type=2"target="blank">广式老婆饼</a></div>
+                        <div class="goods-area">广东 · 广式茶点</div>
+                        <div class="price">¥22.5</div>
+                    </div>
+                </div>
+                <div class="goods-card">
+                    <img class="goods-img" src="C:\Users\x3162\Desktop\新山书屋网站\6.jpg" alt="陕西水晶饼">
+                    <div class="goods-info">
+                        <div class="goods-name"><a href="https://m.baidu.com/sf?pd=goods_page&atn=index&exp_flag=4&good_cate=1320_1583_1595&goods_urlsign=4508740927279267720&lid=5639500461189931436&shop_a_bmcid=27189482879&shop_bmcid_list=83460874085%2C34380854763%2C27189482879%2C36050229655%2C29233627666%2C70420583335&sn=6&word=%E6%B0%B4%E6%99%B6%E9%A5%BC%E5%AE%98%E6%96%B9%E6%97%97%E8%88%B0%E5%BA%97&srcid=5544&fr=5544-goodsList-goodsCard&from=5544&qq_aio_chat_type=2"target="blank">陕西水晶饼</a></div>
+                        <div class="goods-area">陕西 · 西北糕点</div>
+                        <div class="price">¥25.0</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 底部 -->
+    <footer>
+        <p>百味糕点汇 ©2026 全国特色糕点交易平台 | 商家入驻、礼盒定制一件代发</p>
+    </footer>
+
+    <!-- 实时搜索JS -->
+    <script>
+        const input = document.getElementById('search-input');
+        const list = document.querySelectorAll('.goods-card');
+
+        input.oninput = function(){
+            let key = this.value.trim().toLowerCase();
+            list.forEach(item=>{
+                let name = item.querySelector('.goods-name').innerText.toLowerCase();
+                if(name.includes(key)){
+                    item.style.display = 'block';
+                }else{
+                    item.style.display = 'none';
+                }
+            })
+        }
+    </script>
+</body>
+</html>
